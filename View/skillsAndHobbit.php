@@ -25,7 +25,7 @@
             <p>Lecture</p>
         </section>
 
-        <p><a href="cv.php">Accueil</a></p>
+        <p class="button"><a href="cv.php">Accueil</a></p>
     </main>
 </body>
 </html>

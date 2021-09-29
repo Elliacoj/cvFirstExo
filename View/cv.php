@@ -50,16 +50,17 @@
         </section>
 
         <h2>Informations</h2>
-        <nav>
-
-            <ul>
-                <li><a href="skillsAndHobbit.php">Compétences/Hobbit</a></li>
-                <li><a href="studyAndCareer.php">Etudes et formations/Parcours professionnel</a></li>
-            </ul>
-        </nav>
-
         <section>
-            <h3>Contact</h3>
+            <nav>
+                <ul>
+                    <li><a href="skillsAndHobbit.php">Compétences/Hobbit</a></li>
+                    <li><a href="studyAndCareer.php">Etudes et formations/Parcours professionnel</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <h3>Contact</h3>
+        <section>
             <fieldset>
                 <div>
                     <label for="content">Votre message:</label>
@@ -71,5 +72,6 @@
             </fieldset>
         </section>
     </main>
+    <script src="../asset/js/allScript.js"></script>
 </body>
 </html>

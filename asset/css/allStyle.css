@@ -67,11 +67,22 @@ h3 {
 
 nav {
     justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+section {
+    width: 80%;
+    margin: 0 auto;
 }
 
 fieldset, .styleSection {
     flex-direction: column;
     justify-content: normal;
+}
+
+fieldset {
+    width: 100%;
 }
 
 img {
@@ -98,6 +109,10 @@ li, p, dl {
 
 a {
     text-decoration: none;
+}
+
+.button {
+    text-align: center;
 }
 
 ul li a {
