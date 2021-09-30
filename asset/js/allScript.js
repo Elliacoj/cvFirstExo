@@ -123,15 +123,31 @@ let img = document.querySelector("img");
 let fig = document.querySelector("figcaption");
 
 if(fig) {
+    let u = 0;
     function rotate() {
         figure.removeEventListener("mouseover",rotate);
+        if(u === 0) {
+            img.style.transform = "rotateY(180deg)";
+        }
 
-        let animation = figure.animate([
-            { transform: 'scale(1,1)' },
-            { transform: 'scale(-1,1)' }
-        ], {
-            duration: 1000,
-        });
+        if(u === 0) {
+            let animation = img.animate([
+                { transform: 'rotateY(0)' },
+                { transform: 'rotateY(180deg)' }
+            ], {
+                duration: 1000,
+            });
+            u++;
+        }
+        else {
+            let animation = img.animate([
+                { transform: 'rotateY(180deg)' },
+                { transform: 'rotateY(0)' }
+            ], {
+                duration: 1000,
+            });
+            u--;
+        }
 
         let timeImg = setTimeout(function () {
             if(img.src == "http://localhost:63342/cvFirstExo/doc/La_mariniere_60s.png") {
@@ -140,16 +156,17 @@ if(fig) {
             else{
                 img.src = "../doc/La_mariniere_60s.png";
             }
-            img.style.transform = "scale(-1,1)";
-            fig.style.transform = "scale(-1,1)";
-        },450);
-
+        },500);
 
         let timeMouse = setTimeout(function () {
             figure.addEventListener("mouseover",rotate);
-            img.style.transform = "scale(1,1)";
-            fig.style.transform = "scale(1,1)";
-        },999);
+            if(u === 1) {
+                img.style.transform = "rotateY(180deg)";
+            }
+            else {
+                img.style.transform = "rotateY(0)";
+            }
+        },1000);
     }
 
     figure.addEventListener("mouseover",rotate);
@@ -166,7 +183,6 @@ if(document.querySelector('nav')) {
             let nav = document.querySelector('nav');
 
             let array = Object.keys(response[0]).map(key => [key, response[0][key]]);
-            console.log(array);
             for(let x = 0; x < array.length; x++) {
 
                 let ul = document.createElement("ul")
@@ -182,7 +198,7 @@ if(document.querySelector('nav')) {
     }
     xml.send();
 }
-console.log(1);
+
 if(sectionOne) {
 
     xml.overrideMimeType("application/json");
