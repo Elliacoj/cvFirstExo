@@ -13,7 +13,7 @@
         <h1>Amaury Jocaille</h1>
     </header>
     <main>
-        <h2>Information personnelles</h2>
+        <h2>→ Information personnelles</h2>
         <section id="sectionInformation">
             <aside>
                 <table>
@@ -49,17 +49,14 @@
             </aside>
         </section>
 
-        <h2>Informations</h2>
+        <h2>→ Informations</h2>
         <section>
             <nav>
-                <ul>
-                    <li><a href="skillsAndHobbit.php">Compétences/Hobbit</a></li>
-                    <li><a href="studyAndCareer.php">Etudes et formations/Parcours professionnel</a></li>
-                </ul>
+
             </nav>
         </section>
 
-        <h3>Contact</h3>
+        <h3>→ Contact</h3>
         <section>
             <fieldset>
                 <div>

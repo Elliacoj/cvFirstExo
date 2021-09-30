@@ -27,5 +27,6 @@
 
         <p class="button"><a href="cv.php">Accueil</a></p>
     </main>
+    <script src="../asset/js/allScript.js"></script>
 </body>
 </html>
