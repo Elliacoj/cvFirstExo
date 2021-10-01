@@ -15,19 +15,18 @@ if(h1) {
         duration: 3000,
         iterations: 1
     });
-}
 
-
-setTimeout(function () {
-    h2.forEach(function (e) {
-        e.animate([
-            { rotate: '1turn' },
-        ], {
-            duration: 3000,
-            iterations: 1
+    setTimeout(function () {
+        h2.forEach(function (e) {
+            e.animate([
+                { rotate: '1turn' },
+            ], {
+                duration: 3000,
+                iterations: 1
+            });
         });
-    });
-}, 3000)
+    }, 3000)
+}
 
 if(h3) {
     setTimeout(function () {
@@ -116,7 +115,6 @@ if(label) {
     }
 
     interval();
-
 }
 
 let img = document.querySelector("img");
@@ -238,3 +236,30 @@ if(sectionOne) {
     }
     xml.send();
 }
+
+
+class extendSection extends HTMLElement {
+    constructor() {
+        super();
+
+        this.addEventListener("click", function () {
+            this.setOpen();
+        })
+    }
+
+    get open() {
+        this.innerHTML;
+    }
+
+    setOpen(value) {
+        this.innerHTML = "hahhahahah" ;
+    }
+}
+
+window.customElements.define('test-amaury', extendSection);
+
+
+
+
+
+

@@ -26,7 +26,8 @@
         </section>
 
         <p class="button"><a href="cv.php">Accueil</a></p>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="../asset/js/Jquery.js"></script>
     </main>
-    <script src="../asset/js/allScript.js"></script>
 </body>
 </html>

@@ -18,6 +18,7 @@
 
         <p class="button"><a href="cv.php">Accueil</a></p>
     </main>
-    <script src="../asset/js/allScript.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../asset/js/Jquery.js"></script>
 </body>
 </html>
