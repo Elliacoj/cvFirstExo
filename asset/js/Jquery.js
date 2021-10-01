@@ -111,22 +111,25 @@ let fig = $('figcation');
 if(fig) {
     let u = 0;
     function rotate() {
-        //figure.off("mouseover");
-        if(u === 0) {
-            img.css('transform', "rotateY(180deg)");
-        }
+
+        figure.off("mouseover");
 
         if(u === 0) {
-            let animation = img.css({transform: 'rotateY(180deg)', transition: 'all 2s easy'});
+            img.css({transform: "rotateY(+180deg)", transition: 'all 1s linear', transformStyle: "preserve-3d"});
             u++;
+            if(figure.onmouseleave) {
+                img.css({transform: "rotateY(0)", transition: 'all 1s linear', transformStyle: "preserve-3d"});
+            }
+
         }
         else {
-            let animation = img.css({transform: 'rotateY(0)', transition: 'all 2s easy'});
+            console.log(u);
+            img.css({transform: "rotateY(0)", transition: 'all 1s linear', transformStyle: "preserve-3d"});
             u--;
         }
 
-        /*let timeImg = setTimeout(function () {
-            if(img.attr('src', "http://localhost:63342/cvFirstExo/doc/La_mariniere_60s.png")) {
+        let timeImg = setTimeout(function () {
+            if(img.attr('src') === "../doc/La_mariniere_60s.png") {
                 img.attr('src',"../doc/maxi-coca.jpg");
             }
             else{
@@ -136,13 +139,7 @@ if(fig) {
 
         let timeMouse = setTimeout(function () {
             figure.on("mouseover",rotate);
-            if(u === 1) {
-                img.css('transform',"rotateY(180deg)");
-            }
-            else {
-                img.css('transform',"rotateY(0)");
-            }
-        },1000);*/
+        },1000);
     }
 
     figure.on("mouseover", rotate);
