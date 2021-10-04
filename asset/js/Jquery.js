@@ -120,7 +120,6 @@ if(fig) {
             if(figure.onmouseleave) {
                 img.css({transform: "rotateY(0)", transition: 'all 1s linear', transformStyle: "preserve-3d"});
             }
-
         }
         else {
             console.log(u);
