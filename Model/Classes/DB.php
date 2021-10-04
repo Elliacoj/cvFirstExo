@@ -12,6 +12,9 @@ class DB {
     private string $password = "";
     private static ?PDO $dbInstance = null;
 
+    /**
+     * DB constructor.
+     */
     public function __construct() {
         try {
             self::$dbInstance = new PDO("mysql:dbName=$this->dbName;host=$this->host;chartset=utf8",$this->userName, $this->password);
@@ -23,10 +26,19 @@ class DB {
         }
     }
 
+    /**
+     * Instance the session
+     * @return PDO
+     */
     public function getInstance():PDO {
         if(self::$dbInstance = null) {
             new self();
         }
         return self::$dbInstance;
     }
+
+    /**
+     * For not clone this class
+     */
+    public function __clone() {}
 }

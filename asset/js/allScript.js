@@ -170,6 +170,7 @@ if(fig) {
     figure.addEventListener("mouseover",rotate);
 }
 
+/*
 let xml = new XMLHttpRequest();
 
 if(document.querySelector('nav')) {
@@ -258,6 +259,7 @@ class extendSection extends HTMLElement {
 
 window.customElements.define('test-amaury', extendSection);
 
+*/
 
 
 

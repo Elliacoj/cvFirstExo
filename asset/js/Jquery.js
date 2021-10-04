@@ -144,6 +144,7 @@ if(fig) {
     figure.on("mouseover", rotate);
 }
 
+/*
 $.ajax({
     type: 'GET',
     url: '../li.Json',
@@ -204,3 +205,4 @@ $.ajax({
             dl.append(dd);
         }
     })
+*/

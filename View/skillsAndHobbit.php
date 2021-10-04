@@ -11,19 +11,10 @@
 <body>
     <main>
         <h2>Compétences</h2>
-        <section class="styleSection">
-            <p>S'intégre facilement dans un groupe</p>
-            <p>Comprend vite</p>
-            <p>Connait HTML, CSS, JavaScript, ...</p>
-            <p>Et un super élément</p>
-        </section>
+        <section class="styleSection"></section>
 
         <h2>Hobbits</h2>
-        <section class="styleSection">
-            <p>Informatique</p>
-            <p>Sport</p>
-            <p>Lecture</p>
-        </section>
+        <section class="styleSection"></section>
 
         <p class="button"><a href="cv.php">Accueil</a></p>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
