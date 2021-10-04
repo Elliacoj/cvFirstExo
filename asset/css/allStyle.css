@@ -158,3 +158,9 @@ input {
 ul li {
     text-align: center;
 }
+
+form {
+    margin: 2% 0;
+    display: flex;
+    justify-content: center;
+}

@@ -51,9 +51,10 @@
 
         <h2>→ Informations</h2>
         <section>
-            <nav>
+            <nav> <?php
+            $allUl = UlManager::get();
 
-            </nav>
+         ?> </nav>
         </section>
 
         <h3>→ Contact</h3>

@@ -30,7 +30,7 @@ class DB {
      * Instance the session
      * @return PDO
      */
-    public function getInstance():PDO {
+    public static function getInstance():PDO {
         if(self::$dbInstance = null) {
             new self();
         }
