@@ -5,7 +5,7 @@ use App\Model\Classes\DB;
 use App\Model\Entity\Section;
 use App\Model\Traits\TraitsManager;
 
-require_once "../../View/require.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/View/require.php";
 
 class SectionManager {
 

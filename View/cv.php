@@ -78,7 +78,29 @@ require_once "require.php";
                 </div>
             </fieldset>
         </section>
+        <h3>→ Connexion</h3>
+        <section><?php
+            if(isset($_SESSION['role']) && $_SESSION['role'] === "admin") { ?>
+                <p class="button"><a href="administration.php">Administration</a></p> <?php
+            }
+            if(!isset($_SESSION['role'], $_SESSION['id'])) { ?>
+                <form action="/Controller/UserController.php?action=connection" method="post">
+                    <div>
+                        <label for="userName">Nom d'utilisateur</label>
+                        <input type="text" name="userName" id="userName">
+                    </div>
+                    <div>
+                        <label for="password">Mot de passe</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                </form> <?php
+            }
+            else { ?>
+                <p class="button"><a href="/Controller/UserController.php?action=disconnection">Connexion</a></p> <?php
+            }?>
+        </section>
     </main>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../asset/js/Jquery.js"></script>
 </body>

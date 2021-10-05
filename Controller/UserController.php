@@ -1,6 +1,3 @@
 <?php
 
-
-class UserController {
-
-}
+require_once "../View/require.php";
