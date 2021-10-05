@@ -5,9 +5,7 @@ use App\Model\Classes\DB;
 use App\Model\Entity\Section;
 use App\Model\Traits\TraitsManager;
 
-require_once "Traits/TraitsManager.php";
-require_once "../Model/Classes/DB.php";
-require_once "../Model/Entity/Section.php";
+require_once "../../View/require.php";
 
 class SectionManager {
 

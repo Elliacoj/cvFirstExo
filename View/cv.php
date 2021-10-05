@@ -1,5 +1,5 @@
 <?php
-require_once "../Model/Manager/UlManager.php";
+require_once "require.php";
 ?>
 <!doctype html>
 <html lang="fr">

@@ -1,5 +1,5 @@
 <?php
-require_once "../Model/Manager/DlManager.php";
+require_once "require.php";
 ?>
 <!doctype html>
 <html lang="fr">
@@ -14,14 +14,28 @@ require_once "../Model/Manager/DlManager.php";
 <body>
     <main>
         <h2>Etudes et formations</h2>
-        <section id="sectionOne" class="styleSectionStudy">
-
-        </section>
+        <section id="sectionOne" class="styleSectionStudy"> <?php
+            $allDl = DlManager::get();
+            echo "<dl>";
+            foreach ($allDl as $dl) {
+                if($dl->getDl() === 0) {
+                    echo "<dt>" . $dl->getContentDt() . "</dt><dd>" . $dl->getContentDd() . "</dd>";
+                }
+            }
+            echo "</dl>";
+     ?> </section>
 
         <h2>Parcours professionnel</h2>
-        <section id="sectionTwo" class="styleSectionStudy">
-
-        </section>
+        <section id="sectionTwo" class="styleSectionStudy"><?php
+            $allSection = DlManager::get();
+            echo "<dl>";
+            foreach ($allDl as $dl) {
+                if($dl->getDl() === 1) {
+                    echo "<dt>" . $dl->getContentDt() . "</dt><dd>" . $dl->getContentDd() . "</dd>";
+                }
+            }
+            echo "</dl>";
+     ?> </section>
 
         <p class="button"><a href="cv.php">Accueil</a></p>
     </main>
