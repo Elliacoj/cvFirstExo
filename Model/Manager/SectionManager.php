@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Model\Manager;
 
 use App\Model\Classes\DB;
 use App\Model\Entity\Section;
@@ -21,7 +22,7 @@ class SectionManager {
         $page = $section->getPage();
         $section = $section->getSection();
 
-        $stmt = DB::getInstance()->prepare("INSERT INTO ellia_section (content, page, section) VALUES(':content', ':page', ':section')");
+        $stmt = DB::getInstance()->prepare("INSERT INTO ellia_section (content, page, section) VALUES(:content, :page, :section)");
 
         $stmt->bindValue("content", $content);
         $stmt->bindValue("page", $page);

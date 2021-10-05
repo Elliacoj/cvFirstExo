@@ -57,7 +57,12 @@ if(h3) {
     h3.each(function () {
         $(this).click(function () {
             if($(this).next().css("display") === "none") {
-                $(this).next().css("display","flex");
+                if($(this).next().attr("id") === "sectionConnection") {
+                    $(this).next().css("display","block");
+                }
+                else {
+                    $(this).next().css("display","flex");
+                }
                 $(this).html($(this).html().replace("→", "↓"));
             }
             else{
@@ -206,3 +211,32 @@ $.ajax({
         }
     })
 */
+
+let passwordCreate = $("#passwordCreate");
+let passwordLogin = $("#passwordLogin");
+let buttonSubmit = $('.buttonSubmit');
+
+function check(button, content) {
+    const regex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
+    if(!regex.test(content) === false) {
+        button.removeAttribute("disabled");
+    }
+    else {
+        $(button).attr("disabled", "true");
+    }
+}
+
+if(passwordCreate) {
+
+    buttonSubmit.each(function () {
+        $(this).attr("disabled", "true");
+    })
+
+    passwordCreate.on("keyup", function () {
+        check(buttonSubmit.get(1), passwordCreate.val())
+    });
+
+    passwordLogin.on("keyup", function () {
+        check(buttonSubmit.get(0), passwordLogin.val());
+    })
+}

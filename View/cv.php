@@ -1,4 +1,7 @@
 <?php
+
+use App\Model\Manager\UlManager;
+
 require_once "require.php";
 ?>
 <!doctype html>
@@ -77,28 +80,52 @@ require_once "require.php";
                     <input type="submit">
                 </div>
             </fieldset>
-        </section>
+        </section> <?php
+        if(isset($_SESSION['role']) && $_SESSION['role'] === "admin") { ?>
+        <p class="button"><a href="administration.php">Administration</a></p> <?php
+        } ?>
         <h3>→ Connexion</h3>
-        <section><?php
-            if(isset($_SESSION['role']) && $_SESSION['role'] === "admin") { ?>
-                <p class="button"><a href="administration.php">Administration</a></p> <?php
-            }
+        <section id="sectionConnection"><?php
             if(!isset($_SESSION['role'], $_SESSION['id'])) { ?>
+            <h4>Login</h4>
+            <div>
                 <form action="/Controller/UserController.php?action=connection" method="post">
                     <div>
                         <label for="userName">Nom d'utilisateur</label>
-                        <input type="text" name="userName" id="userName">
+                        <input type="text" name="userName" id="userName" required>
                     </div>
                     <div>
-                        <label for="password">Mot de passe</label>
-                        <input type="password" name="password" id="password">
+                        <label for="passwordLogin">Mot de passe</label>
+                        <input type="password" name="password" id="passwordLogin" required>
                     </div>
-                </form> <?php
-            }
-            else { ?>
-                <p class="button"><a href="/Controller/UserController.php?action=disconnection">Connexion</a></p> <?php
-            }?>
-        </section>
+                    <div>
+                        <input type="submit" class="buttonSubmit">
+                    </div>
+                </form>
+            </div>
+
+            <h4>Creation de compte</h4>
+            <div>
+                <form action="/Controller/UserController.php?action=create" method="post">
+                    <div>
+                        <label for="userName">Nom d'utilisateur</label>
+                        <input type="text" name="userName" id="userName" required>
+                    </div>
+                    <div>
+                        <label for="passwordCreate">Mot de passe</label>
+                        <input type="password" name="password" id="passwordCreate" required>
+                    </div>
+                    <div>
+                        <input type="submit" class="buttonSubmit">
+                    </div>
+                </form>
+            </div> <?php
+            } ?>
+
+        </section> <?php
+        if (isset($_SESSION['role'], $_SESSION['id'])) { ?>
+        <p class="button"><a href="/Controller/UserController.php?action=disconnection">Connexion</a></p> <?php
+            } ?>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

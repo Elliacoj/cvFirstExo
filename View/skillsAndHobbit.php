@@ -1,4 +1,7 @@
 <?php
+
+use App\Model\Manager\SectionManager;
+
 require_once "../Model/Manager/SectionManager.php";
 ?>
 <!doctype html>

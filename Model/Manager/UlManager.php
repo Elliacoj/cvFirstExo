@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Model\Manager;
 
 use App\Model\Classes\DB;
 use App\Model\Entity\Ul;
@@ -21,7 +22,7 @@ class UlManager {
         $contentA = $ul->getContentA();
         $ul = $ul->getUl();
 
-        $stmt = DB::getInstance()->prepare("INSERT INTO ellia_ul (content, ul, contentA) VALUES(':content', ':ul', ':contentA')");
+        $stmt = DB::getInstance()->prepare("INSERT INTO ellia_ul (content, ul, contentA) VALUES(:content, :ul, :contentA)");
 
         $stmt->bindValue("content", $content);
         $stmt->bindValue("ul", $ul);

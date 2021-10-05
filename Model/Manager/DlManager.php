@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Model\Manager;
+
 use App\Model\Classes\DB;
 use App\Model\Entity\Dl;
 use App\Model\Traits\TraitsManager;
@@ -20,7 +22,7 @@ class DlManager {
         $contentDd = $dl->getContentDd();
         $dl = $dl->getDl();
 
-        $stmt = DB::getInstance()->prepare("INSERT INTO ellia_dl (content_dt, content_dd, dl) VALUES(':contentDt', ':contentDd', ':dl')");
+        $stmt = DB::getInstance()->prepare("INSERT INTO ellia_dl (content_dt, content_dd, dl) VALUES(:contentDt, :contentDd, :dl)");
 
         $stmt->bindValue("contentDt", $contentDt);
         $stmt->bindValue("contentDd", $contentDd);

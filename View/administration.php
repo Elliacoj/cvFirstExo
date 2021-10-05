@@ -13,7 +13,7 @@ require_once "require.php";
 <body>
     <h2>Ajout d'une </h2>
     <div>
-        f
+
     </div>
 </body>
 </html>

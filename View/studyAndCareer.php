@@ -1,4 +1,7 @@
 <?php
+
+use App\Model\Manager\DlManager;
+
 require_once "require.php";
 ?>
 <!doctype html>
