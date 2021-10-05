@@ -6,18 +6,21 @@ class Ul {
     private ?int $id;
     private ?string $content;
     private ?int $ul;
+    private ?string $contentA;
 
     /**
      * Ul constructor.
      * @param int|null $id
      * @param string|null $content
      * @param int|null $ul
+     * @param string|null $contentA
      */
-    public function __construct(int $id = null, string $content = null, int $ul = null)
+    public function __construct(int $id = null, string $content = null, int $ul = null, string $contentA = null)
     {
         $this->id = $id;
         $this->content = $content;
         $this->ul = $ul;
+        $this->contentA = $contentA;
     }
 
     /**
@@ -61,10 +64,31 @@ class Ul {
     /**
      * Set the ul of Ul
      * @param int|null $ul
+     * @return Ul
      */
     public function setUl(?int $ul): Ul
     {
         $this->ul = $ul;
+        return $this;
+    }
+
+    /**
+     * Return the contentA of Ul
+     * @return string|null
+     */
+    public function getContentA(): ?string
+    {
+        return $this->contentA;
+    }
+
+    /**
+     * Set the contentA of Ul
+     * @param string|null $contentA
+     * @return Ul
+     */
+    public function setContentA(?string $contentA): Ul
+    {
+        $this->contentA = $contentA;
         return $this;
     }
 }

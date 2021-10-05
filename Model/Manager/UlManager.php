@@ -5,6 +5,10 @@ use App\Model\Classes\DB;
 use App\Model\Entity\Ul;
 use App\Model\Traits\TraitsManager;
 
+require_once "Traits/TraitsManager.php";
+require_once "../Model/Classes/DB.php";
+require_once "../Model/Entity/Ul.php";
+
 class UlManager {
 
     use TraitsManager;
@@ -16,12 +20,14 @@ class UlManager {
      */
     public static function add(Ul $ul):bool {
         $content = $ul->getContent();
-        $content = $ul->getUl();
+        $ul = $ul->getUl();
+        $contentA = $ul->getContentA();
 
-        $stmt = DB::getInstance()->prepare("INSERT INTO Ul (content) VALUES(':content', ':ul')");
+        $stmt = DB::getInstance()->prepare("INSERT INTO ellia_ul (content, ul, contentA) VALUES(':content', ':ul', ':contentA')");
 
         $stmt->bindValue("content", $content);
         $stmt->bindValue("ul", $ul);
+        $stmt->bindValue("contentA", $contentA);
         return $stmt->execute();
     }
 
@@ -30,13 +36,12 @@ class UlManager {
      * @return array
      */
     public static function get():array {
-        $stmt = DB::getInstance()->prepare("SELECT * FROM Ul");
-        $stmt->execute();
+        $stmt = DB::getInstance()->prepare("SELECT * FROM ellia_ul");
 
         $allUl = [];
         if($stmt->execute() && $datas = $stmt->fetchAll()){
             foreach($datas as $data) {
-                $ul = new Ul($data["id"],$data["content"], $data["ul"]);
+                $ul = new Ul($data["id"],$data["content"], $data["ul"], $data['contentA']);
                 $allUl[] = $ul;
             }
         }

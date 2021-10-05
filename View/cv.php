@@ -1,3 +1,6 @@
+<?php
+require_once "../Model/Manager/UlManager.php";
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -53,7 +56,13 @@
         <section>
             <nav> <?php
             $allUl = UlManager::get();
-
+            echo "<ul>";
+            foreach ($allUl as $ul) {
+                if($ul->getUl() === 0) {
+                    echo "<li><a href='" . $ul->getContentA() . "'>" . $ul->getContent() . "</a></li>";
+                }
+            }
+            echo "</ul>";
          ?> </nav>
         </section>
 
