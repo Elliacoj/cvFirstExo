@@ -83,16 +83,16 @@ require_once "require.php";
         </section> <?php
         if(isset($_SESSION['role']) && $_SESSION['role'] === "admin") { ?>
         <p class="button"><a href="administration.php">Administration</a></p> <?php
-        } ?>
-        <h3>→ Connexion</h3>
-        <section id="sectionConnection"><?php
-            if(!isset($_SESSION['role'], $_SESSION['id'])) { ?>
+        }
+        if(!isset($_SESSION['role'], $_SESSION['id'])) {
+     ?> <h3>→ Connexion</h3>
+        <section id="sectionConnection">
             <h4>Login</h4>
             <div>
                 <form action="/Controller/UserController.php?action=connection" method="post">
                     <div>
                         <label for="userName">Nom d'utilisateur</label>
-                        <input type="text" name="userName" id="userName" required>
+                        <input type="text" name="userName" id="userName" required maxlength="20">
                     </div>
                     <div>
                         <label for="passwordLogin">Mot de passe</label>
@@ -109,7 +109,7 @@ require_once "require.php";
                 <form action="/Controller/UserController.php?action=create" method="post">
                     <div>
                         <label for="userName">Nom d'utilisateur</label>
-                        <input type="text" name="userName" id="userName" required>
+                        <input type="text" name="userName" id="userName" required maxlength="20">
                     </div>
                     <div>
                         <label for="passwordCreate">Mot de passe</label>
@@ -124,7 +124,7 @@ require_once "require.php";
 
         </section> <?php
         if (isset($_SESSION['role'], $_SESSION['id'])) { ?>
-        <p class="button"><a href="/Controller/UserController.php?action=disconnection">Connexion</a></p> <?php
+        <p class="button"><a href="/Controller/UserController.php?action=disconnected">Deconnexion</a></p> <?php
             } ?>
     </main>
 

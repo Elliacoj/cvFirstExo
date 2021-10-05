@@ -17,7 +17,7 @@ class UserManager {
      * @return bool
      */
     public static function add(User $user):bool {
-        $username = filter_var($user->getUsername(), FILTER_SANITIZE_STRING);
+        $username = $user->getUsername();
         $password = $user->getPassword();
 
         $stmt = DB::getInstance()->prepare("INSERT INTO ellia_user (username, password) VALUES(:username, :password)");
@@ -29,11 +29,11 @@ class UserManager {
 
     /**
      * Return an array of all data Dl
-     * @param $id
+     * @param $username
      * @return User|null
      */
-    public static function search($id):?User {
-        $stmt = DB::getInstance()->prepare("SELECT * FROM ellia_dl WHERE id = '$id'");
+    public static function search($username):?User {
+        $stmt = DB::getInstance()->prepare("SELECT * FROM ellia_user WHERE username = '$username'");
         $user = null;
         if($stmt->execute() && $userData = $stmt->fetch()){
             $user = new User($userData['id'], $userData['username'], $userData['password'], $userData['role']);

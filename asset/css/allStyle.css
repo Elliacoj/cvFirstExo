@@ -46,7 +46,7 @@ h3 {
     font-size: 2rem;
 }
 
-#sectionInformation, nav, fieldset, .styleSection {
+#sectionInformation, nav, fieldset, .styleSection, .divAdmin {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -180,4 +180,35 @@ h4 {
     font-size: 2rem;
     color: #f0f0f0;
     text-decoration-line: underline;
+}
+
+.divAdmin {
+    width: 80%;
+    margin: 2% auto;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.divAdmin label {
+    font-size: 1.5rem;
+}
+
+.divAdmin form {
+    flex-direction: column;
+}
+
+.divAdmin form div{
+    margin: 2% 0;
+}
+
+.divAdmin textarea {
+    height: 100px;
+}
+
+.divAdmin p {
+    text-align: center;
+}
+
+.divAdmin li {
+    font-size: 1.5rem;
 }
