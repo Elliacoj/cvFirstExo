@@ -1,3 +1,6 @@
+<?php
+require_once "../Model/Manager/DlManager.php";
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -11,10 +14,14 @@
 <body>
     <main>
         <h2>Etudes et formations</h2>
-        <section id="sectionOne" class="styleSectionStudy"></section>
+        <section id="sectionOne" class="styleSectionStudy">
+
+        </section>
 
         <h2>Parcours professionnel</h2>
-        <section id="sectionTwo" class="styleSectionStudy"></section>
+        <section id="sectionTwo" class="styleSectionStudy">
+
+        </section>
 
         <p class="button"><a href="cv.php">Accueil</a></p>
     </main>

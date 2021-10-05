@@ -20,8 +20,8 @@ class UlManager {
      */
     public static function add(Ul $ul):bool {
         $content = $ul->getContent();
-        $ul = $ul->getUl();
         $contentA = $ul->getContentA();
+        $ul = $ul->getUl();
 
         $stmt = DB::getInstance()->prepare("INSERT INTO ellia_ul (content, ul, contentA) VALUES(':content', ':ul', ':contentA')");
 

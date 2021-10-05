@@ -1,3 +1,6 @@
+<?php
+require_once "../Model/Manager/SectionManager.php";
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -11,10 +14,26 @@
 <body>
     <main>
         <h2>Compétences</h2>
-        <section class="styleSection"></section>
+        <section class="styleSection"> <?php
+        $allSection = SectionManager::get();
+
+        foreach ($allSection as $section) {
+            if(($section->getPage() === 1) && ($section->getSection() === 0)) {
+                echo "<p>" . $section->getContent() . "</p>";
+            }
+        }
+     ?> </section>
 
         <h2>Hobbits</h2>
-        <section class="styleSection"></section>
+        <section class="styleSection"> <?php
+        $allSection = SectionManager::get();
+
+        foreach ($allSection as $section) {
+            if(($section->getPage() === 1) && ($section->getSection() === 1)) {
+                echo "<p>" . $section->getContent() . "</p>";
+            }
+        }
+     ?> </section>
 
         <p class="button"><a href="cv.php">Accueil</a></p>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
