@@ -1,5 +1,6 @@
 <?php
 
+use App\Model\Entity\Dl;
 use App\Model\Manager\DlManager;
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/View/require.php";
@@ -11,7 +12,8 @@ switch ($requestType) {
     case "GET":
         echo get();
         break;
-    case "add":
+    case "POST":
+        add((json_decode(file_get_contents('php://input'))));
         break;
 }
 
@@ -26,4 +28,13 @@ function get() {
         ];
     }
     return json_encode($arrayDl);
+}
+
+/**
+ * Add a data into table Dl
+ * @param $data
+ */
+function add($data)
+{
+    DlManager::add((new Dl(null, $data->contentDt, $data->contentDd, $data->dl)));
 }

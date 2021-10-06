@@ -36,6 +36,5 @@ function get() {
  * @param $data
  */
 function add($data) {
-    echo $data->content;
-    SectionManager::add((new Section(null,$data->content, $data->section)));
+    SectionManager::add((new Section(null, $data->content, $data->section, $data->page)));
 }

@@ -26,7 +26,7 @@ require_once "require.php";
                     <option value="1">Hobbit</option>
                 </select>
             </div>
-            <input type="button" id="buttonSection">
+            <input type="button" id="buttonSection" value="Envoyer">
         </form>
 
         <div>
@@ -43,17 +43,21 @@ require_once "require.php";
     <div class="divAdmin">
         <form>
             <div>
-                <label for="contentDl">Contenu:</label>
-                <textarea id="contentDl" name="contentDl"></textarea>
+                <label for="contentDt">Contenu du dt:</label>
+                <textarea id="contentDt" name="contentDt"></textarea>
+            </div>
+            <div>
+                <label for="contentDd">Contenu du dd:</label>
+                <textarea id="contentDd" name="contentDd"></textarea>
             </div>
             <div>
                 <label for="choiceDl">Type:</label>
                 <select name="choiceDl" id="choiceDl">
-                    <option value="0">Compétence</option>
-                    <option value="1">Hobbit</option>
+                    <option value="0">Etudes</option>
+                    <option value="1">Parcours pro</option>
                 </select>
             </div>
-            <input type="button" id="buttonDl">
+            <input type="button" id="buttonDl" value="Envoyer">
         </form>
 
         <div>

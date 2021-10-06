@@ -2,18 +2,18 @@ function dataSH() {
     let contentSection = document.getElementById("contentSection").value;
     let choiceSection = document.getElementById("choiceSection").value;
     if(contentSection) {
-        console.log(1);
         let xhr = new XMLHttpRequest();
         const message = {
             'content': contentSection,
-            'section': choiceSection
+            'section': choiceSection,
+            'page': 1
         };
 
         xhr.open('POST', '/api/SkillsAndHobbits/skillsAndHobbits.php');
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.send(JSON.stringify(message));
 
-        contentSection.innerHTML = "";
+        document.getElementById("contentSection").innerHTML = "";
     }
 
     let $xml = new XMLHttpRequest;
@@ -24,7 +24,8 @@ function dataSH() {
 
         let ulSkills = document.getElementById('ulSkills');
         let ulHobbits = document.getElementById('ulHobbit');
-
+        ulSkills.innerHTML = '';
+        ulHobbits.innerHTML = '';
         response.forEach(function (e) {
             let li = document.createElement("li");
             li.innerHTML = e['content'];
@@ -42,6 +43,29 @@ function dataSH() {
 dataSH();
 
 function dataSW() {
+    let contentDt = document.getElementById("contentDt").value;
+    let contentDd = document.getElementById("contentDd").value;
+    let choiceDl = document.getElementById("choiceDl").value;
+
+    if(contentDt) {
+        if(contentDd) {
+            document.getElementById("contentDt").value = "";
+            document.getElementById("contentDd").value = "";
+
+            let xhr = new XMLHttpRequest();
+            const message = {
+                'contentDt': contentDt,
+                'contentDd': contentDd,
+                'dl': choiceDl
+            };
+
+            xhr.open('POST', '/api/studyAndWork/studyAndWork.php');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send(JSON.stringify(message));
+        }
+
+    }
+
     let $xml = new XMLHttpRequest;
     $xml.open("get", "/api/studyAndWork/studyAndWork.php");
     $xml.responseType = "json";
@@ -51,8 +75,10 @@ function dataSW() {
         let dlStudy = document.getElementById('dlStudy');
         let dlWork = document.getElementById('dlWork');
 
+        dlStudy.innerHTML = '';
+        dlWork.innerHTML = '';
+
         response.forEach(function (e) {
-            console.log(e['contentDt'])
             let dt = document.createElement("dt");
             let dd = document.createElement("dd");
             dt.innerHTML = e['contentDt'];
@@ -73,3 +99,4 @@ function dataSW() {
 dataSW();
 
 document.getElementById("buttonSection").addEventListener("click", dataSH);
+document.getElementById("buttonDl").addEventListener("click", dataSW);
